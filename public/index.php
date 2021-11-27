@@ -29,7 +29,7 @@
 			print "Host: " . $host;
 			if ($host) {
 				return ClientBuilder::create()
-					->setHosts($host)
+					->setHosts([$host])
 					// Sniffing should be disabled.
 					->setSniffOnStart(false)
 					->build();
