@@ -54,9 +54,13 @@
 						"message" => "es-php-basic"
 					]
 				]);
-				echo('... Hello! A new document was inserted into Elasticsearch!');
-				var_dump($insertResult);
-				syslog(LOG_NOTICE, "... Hello! A new document was inserted into Elasticsearch!");
+				if ($insertResult["result"] === "created") {
+					echo("... Hello! A new document was inserted into Elasticsearch!");
+					syslog(LOG_NOTICE, "... created document id:" . $insertResult["_id"]);
+				} else {
+					echo("... Error! Elasticsearch insert operation failed:" . $insertResult["result"]);
+					syslog(LOG_ERR, "... document creation failed:" . $insertResult["result"]);
+				}
 			} catch (Exception $e) {
 				echo "... Error! Elasticsearch insert operation failed: " . $e->getCode() . ':' . $e->getMessage();
 				syslog(LOG_ERR, "... Error! Elasticsearch insert operation failed: " . $e->getCode() . ':' . $e->getMessage());
