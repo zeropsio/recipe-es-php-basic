@@ -67,7 +67,7 @@
 		}
 	}
 
-	getEsClient($hostname);
+	insert($esClient);
 
 	// Close the logging channel.
 	closelog();
