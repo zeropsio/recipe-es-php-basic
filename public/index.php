@@ -36,10 +36,14 @@
 			return null;
 		}
 
+		print "Before getEsClient";
+
 		// Declaration of the Elasticsearch SDK API client.
 		$esClient = getEsClient($hostname);
 
-	} catch (Exception $e) {
+		print "After getEsClient";
 
+	} catch (Exception $e) {
+		echo 'Error: ' . $e->getCode() . ':' . $e->getMessage();
 	}
 ?>
