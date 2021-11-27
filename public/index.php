@@ -55,7 +55,7 @@
 					]
 				]);
 				echo('... Hello! A new document was inserted into Elasticsearch!');
-				echo $insertResult;
+				var_dump($insertResult);
 				syslog(LOG_NOTICE, "... Hello! A new document was inserted into Elasticsearch!");
 			} catch (Exception $e) {
 				echo "... Error! Elasticsearch insert operation failed: " . $e->getCode() . ':' . $e->getMessage();
