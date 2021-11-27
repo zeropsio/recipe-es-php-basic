@@ -55,8 +55,8 @@
 					]
 				]);
 				echo('... Hello! A new document was inserted into Elasticsearch!');
-				syslog(LOG_ERR, "... Hello! A new document was inserted into Elasticsearch!");
-				// .statusCode
+				echo $insertResult;
+				syslog(LOG_NOTICE, "... Hello! A new document was inserted into Elasticsearch!");
 			} catch (Exception $e) {
 				echo "... Error! Elasticsearch insert operation failed: " . $e->getCode() . ':' . $e->getMessage();
 				syslog(LOG_ERR, "... Error! Elasticsearch insert operation failed: " . $e->getCode() . ':' . $e->getMessage());
