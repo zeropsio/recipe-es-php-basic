@@ -28,7 +28,7 @@
 			$host = getConnectionString($hostname);
 			if ($host) {
 				return ClientBuilder::create()
-					->setHosts($hosts)
+					->setHosts($host)
 					// Sniffing should be disabled.
 					->setSniffOnStart(false)
 					->build();
