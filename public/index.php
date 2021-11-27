@@ -23,6 +23,7 @@
 			return null;
 		}
 
+		// Function returning an object of the Elasticsearch SDK client.
 		function getEsClient($hostname) {
 			// For example, the result of the <host> would be: ["http://recipees:9200"]
 			$host = getConnectionString($hostname);
@@ -37,12 +38,22 @@
 			return null;
 		}
 
-		print "Before getEsClient";
-
 		// Declaration of the Elasticsearch SDK API client.
 		$esClient = getEsClient($hostname);
 
-		print "After getEsClient";
+		// Function inserting a new document.
+		function insert($esClient) {
+			$insertResult = $esClient->index([
+				"index" => "zerops-recipes",
+				"body" => [
+					"service" => "PHP",
+					"version" => "8.0",
+					"message" => "es-php-basic"
+				]
+			]);
+			echo $insertResult;
+		}
+
 
 	} catch (Exception $e) {
 		echo 'Error: ' . $e->getCode() . ':' . $e->getMessage();

@@ -1,4 +1,5 @@
 use: [php@8.0]
 run:
+  - php -i
   - composer install
 deploy: ['vendor', 'public']
