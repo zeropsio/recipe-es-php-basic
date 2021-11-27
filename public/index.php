@@ -62,8 +62,8 @@
 					syslog(LOG_ERR, "... document creation failed:" . $insertResult["result"]);
 				}
 			} catch (Exception $e) {
-				echo "... Error! Elasticsearch insert operation failed: " . $e->getCode() . ':' . $e->getMessage();
-				syslog(LOG_ERR, "... Error! Elasticsearch insert operation failed: " . $e->getCode() . ':' . $e->getMessage());
+				echo "... Error! Elasticsearch insert operation failed:" . $e->getCode() . ':' . $e->getMessage();
+				syslog(LOG_ERR, "... Error! Elasticsearch insert operation failed:" . $e->getCode() . ':' . $e->getMessage());
 			}
 		} else {
 			echo "... Error! Elasticsearch SDK API client not initialized.";
@@ -71,6 +71,7 @@
 		}
 	}
 
+	// Invoke the function inserting a new document.
 	insert($esClient);
 
 	// Close the logging channel.
