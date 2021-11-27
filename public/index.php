@@ -27,7 +27,6 @@
 		function getEsClient($hostname) {
 			// For example, the result of the <host> would be: ["http://recipees:9200"]
 			$host = getConnectionString($hostname);
-			print "Host: " . $host;
 			if ($host) {
 				return ClientBuilder::create()
 					->setHosts([$host])
@@ -47,13 +46,14 @@
 				"index" => "zerops-recipes",
 				"body" => [
 					"service" => "PHP",
-					"version" => "8.0",
+					"version" => "8.0.3",
 					"message" => "es-php-basic"
 				]
 			]);
 			echo $insertResult;
 		}
 
+		getEsClient($hostname);
 
 	} catch (Exception $e) {
 		echo 'Error: ' . $e->getCode() . ':' . $e->getMessage();
