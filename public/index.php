@@ -29,7 +29,7 @@
 	function getEsClient($hostname) {
 		// For example, the result of the <host> would be: ["http://recipees:9200"]
 		$host = getConnectionString($hostname);
-		syslog(LOG_NOTICE, "... host:" . $host);
+		syslog(LOG_NOTICE, "... ES connectionString: " . $host);
 		if ($host) {
 			return ClientBuilder::create()
 				->setHosts([$host])
