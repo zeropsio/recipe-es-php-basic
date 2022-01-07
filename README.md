@@ -24,8 +24,6 @@ services:
   # Whether the service will be run on one or multiple containers.
   # Since this is a utility service, using only one container is fine.
   mode: NON_HA
-  # Folder name used as the root of the publicly accessible web server content.
-  documentRoot: public
   # Repository that contains PHP code with build and deploy instructions.
   buildFromGit: https://github.com/zeropsio/recipe-es-php-basic@main
 ```

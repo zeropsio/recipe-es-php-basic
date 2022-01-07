@@ -8,3 +8,6 @@ recipeesphp:
       - composer install
     # What files and directories should be copied from a build container into a runtime container.
     deploy: ['vendor', 'public']
+  run:
+    # Folder name used as the root of the publicly accessible web server content.
+    - documentRoot: public
