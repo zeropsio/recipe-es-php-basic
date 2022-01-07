@@ -10,4 +10,4 @@ recipeesphp:
     deploy: ['vendor', 'public']
   run:
     # Folder name used as the root of the publicly accessible web server content.
-    - documentRoot: public
+    documentRoot: public
