@@ -20,7 +20,7 @@ services:
 # Service will be accessible through zcli VPN under: http://repiceesphp:3000
 - hostname: recipeesphp
   # Type and version of a used service.
-  type: php-apache@8.0
+  type: php-apache@8.0+2.4
   # Whether the service will be run on one or multiple containers.
   # Since this is a utility service, using only one container is fine.
   mode: NON_HA
